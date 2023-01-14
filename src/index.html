@@ -24,14 +24,15 @@
   </div>
   <div class="header-bottom">
     <ul class="header-bottom__list">
-      <li class="header-link">Компания</li>
-      <li class="header-link">Услуги</li>
-      <li class="header-link">Работы</li>
-      <li class="header-link">Контакты</li>
+      <a href="#"><li class="header-link">Компания</li></a>
+      <a href="#"><li class="header-link">Услуги</li></a>
+      <a href="#"><li class="header-link">Работы</li></a>
+      <a href="#"><li class="header-link">Контакты</li></a>
     </ul>
   </div>
   </div>
 </header>
+
 <section class="main">
   <div class="container">
   <div class="main-screen">
@@ -49,22 +50,24 @@
     </div> 
   </div>
     <div class="main-screen__image">
-      <img src="./images/main_display.png" alt="">
+      <img src="./images/main_display.png" alt="display">
     </div>
       </div>
       </section>
+   
     <section class="company">
       <div class="container">
         <div class="company-wrapper">
           <div class="text">
             <h4>О компании</h4>
             <div class="text-wrapper">
-              <p> — многопрофильная студия дизайна, основанная в 2006 году. За эти годы мы успели поработать
+              <p class="text-logo-one"><img class="logo-text-one" src="./images/header-logo1.png" alt="logo"><img class="logo-text-two" src="./images/header-logo2.png" alt="logo"> — многопрофильная студия дизайна, основанная в 2006 году. За эти годы мы успели поработать
               в разных направлениях, реализовали множество проектов, достигли профессиональных высот и собрали внушительное портфолио.
               Сегодня мы сосредоточились на том, что нам по-настоящему нравится: дизайн и разработка веб-сайтов
               и мобильных приложений.</p>
               <p>Мы гордимся своей замечательной командой по-настоящему талантливых людей: дизайнеров, программистов, менеджеров,
-              тестировщиков, проектировщиков. Все сотрудники <span>работают</span> в штате, поэтому мы гарантируем, что весь комплекс
+              тестировщиков, проектировщиков. Все сотрудники <img class="logo-text-one" src="./images/header-logo1.png" alt="logo"><img class="logo-text-two"
+                src="./images/header-logo2.png" alt="logo"><span class="span-logo-two">работают</span> в штате, поэтому мы гарантируем, что весь комплекс
               работ по разработке, созданию, поддержке и продвижению сайтов выполняется строго профессионально
               и качественно.</p>
               <p>Мы уверены, что хорошая, чёткая и последовательная разработка имеет большое значение для эффективного маркетинга.
@@ -76,15 +79,68 @@
           <div class="images">
             <img src="./images/Camera.png" alt="Camera">
             <div class="images-wrapper">
-              <img src="./images/NoteBook.png" alt="NoteBook">
-              <img src="./images/Pencil.png" alt="Pencil">
+              <img class="notebook" src="./images/NoteBook.png" alt="NoteBook">
+              <img class="pencil" src="./images/Pencil.png" alt="Pencil">
             </div>
           </div>
         </div>
       </div>
     </section>
 
+    <section class="map">
+        <div id="YMapsID" class="map-wrapper"></div>
+        <div class="container">
+          <div class="contacts-wrapper">
+            <table>
+              <tr class="row1">
+                <td class="adress-one">Адрес:</td>
+                <td class="adress-two">г. Москва,<br>
+                ул. Дербеневская, дом 1, строение 6, подъезд 4, этаж 2.</td>
+              </tr>
+              <tr >
+                <td class="adress-one">Телефоны:</td>
+                <td class="adress-two">+7 (495) 926-01-26<br>
+                +7 (495) 646-00-94</td>
+              </tr>
+            </table>
+
+            <div class="contacts-line-three">
+              <div class="socials">
+                <p>E-mail: <span class="red"> info@nologostudio.ru</span></p>
+                <p>Skype: <span class="alex">alex-trainer</span></p>
+              </div>
+              <p class="years">© 1997-2014 WebStore</p>
+            </div>
+          </div>
+        </div>
+    </section>
 
 
+<script src="https://api-maps.yandex.ru/2.1/?apikey=b5467564-706e-48dd-9004-e8851871557e&lang=ru_RU"
+  type="text/javascript"></script>
+  <script type="text/javascript">
+    ymaps.ready(function () {
+      var myMap = new ymaps.Map('YMapsID', {
+        center: [55.725853, 37.654008],
+        zoom: 16,
+        controls: ['zoomControl'],
+      });
+
+      var myGeoObject = new ymaps.GeoObject({
+        geometry: {
+          type: "Point", // тип геометрии - точка
+          coordinates: [55.725853, 37.654008] // координаты точки
+        }
+      });
+      var myPlacemark = new ymaps.Placemark([55.725853, 37.654008], {}, {
+        iconLayout: 'default#image',
+        iconImageHref: './images/marker.png',
+        iconImageSize: [48, 74],
+        iconImageOffset: [-3, -42]
+      });
+      myMap.geoObjects.add(myPlacemark); 
+    });
+  </script>
+<script src="./index.js"></script>
 </body>
 </html>
