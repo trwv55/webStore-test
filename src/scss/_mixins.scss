@@ -1,0 +1,28 @@
+@import "./variables.scss";
+
+
+@mixin btn-grey {
+  font-size: 16px;
+    line-height: 1.2;
+    font-weight: 700;
+    color: #cb003d;
+    background-color: transparent;
+    padding: 9px 29px;
+    cursor: pointer;
+    border: 2px solid $headerTop;
+    border-radius: 20px;
+}
+
+@mixin btn-red {
+  font-size: 16px;
+    line-height: 1.2;
+    font-weight: 700;
+    color: #ffffff;
+    background-color: $btnRed;
+    padding: 9px 29px;
+    cursor: pointer;
+    border-radius: 20px;
+    border: 2px solid $btnRed;
+
+
+}
